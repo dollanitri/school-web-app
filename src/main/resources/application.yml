@@ -1,0 +1,24 @@
+spring:
+  jpa:
+    database: mysql
+    show-sql: true 
+    generate-ddl: false
+    hibernate: 
+      ddl-auto: none  
+      dialect: org.hibernate.dialect.MySQLDialect
+
+multitenancy: 
+  mtapp: 
+    dataSources: 
+      -
+        tenantId: tenant_1 
+        url: jdbc:mysql://localhost:3306/tenant_one?useSSL=false 
+        username: tenant1
+        password: tenant1 
+        driverClassName: com.mysql.jdbc.Driver 
+      -
+        tenantId: tenant_2
+        url: jdbc:mysql://localhost:3306/tenant_two?useSSL=false
+        username: tenant2
+        password: tenant2
+        driverClassName: com.mysql.jdbc.Driver        
